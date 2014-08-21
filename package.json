@@ -11,5 +11,21 @@
     "jade": "*",
     "mongoose": "^3.8.14",
     "node-sass": "*"
-  }
+  },
+  "main": "app.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DarylRodrigo/gamemakerlearning.git"
+  },
+  "keywords": [
+    "gamemaker",
+    "tutorial"
+  ],
+  "author": "Daryl Rodrigo <darylrodrigo@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DarylRodrigo/gamemakerlearning/issues"
+  },
+  "homepage": "https://github.com/DarylRodrigo/gamemakerlearning"
 }
