@@ -1,0 +1,300 @@
+extends layout
+
+block content
+	.jumbotron(style="background-image: url('/img/titleBg2.png');background-position:center; background-repeat: no-repeat;")
+		.container
+			h1(style="color:#FFFFFF;")  Part II
+			p(style="color:#FFFFFF;") 
+
+
+	.container
+		
+		.row
+			
+
+			.col-md-6
+				h2 I - Facing the Mouse
+
+				p Our player should rotate and face towards the direction of the mouse. Always.
+				
+				ol 
+					li Double click on the player object.
+					li Click <b>Add Event → Step → Step</b>.
+					li Click the label <b>control</b> and under the section <b>Code</b>, drag and drop the icon Execute Code <img src="/img/icons/executeCode.png", style='height:25px;'> in the box under <b>Actions</b>. A new window opens.
+					li Copy paste the following text in the new window. <br> <i>direction =  point_direction(x, y, mouse_x, mouse_y); <br> image_angle = direction;</i>
+					li Save and Close (green tick icon on the top left)
+					li Click <b>OK</b>.
+
+			.col-md-6
+				img(src="/img/tutorial1/7b-actionStepFaceMouse.PNG", style="width:450px;")
+
+		.row
+			hr
+
+			.col-md-6
+				h2 II - Make the Player Shoot!
+
+				ol
+					li Create a new sprite and object which will represent the bullet (like we did in Part I)
+					li To make the player shoot a bullet, we need to add an event in the player object.
+					ol
+						li Double click on the player object.
+						li Click <b>Add Event → Mouse → Global Mouse → Global Left Pressed</b>.
+					<p> Now an action has to take place. What is the action? To create a bullet and send it to the direction we want. </p>
+					li Click the label <b>main1</b> add under the section <b>Objects</b>, drag and drop the icon <b>Create moving object</b> <img src="/img/icons/createMovingObj.png", style='height:25px;'> in the box under <b>Actions</b>. A new window opens.
+					li Click on the text box next to <b>object:</b> and select the bullet object.
+					li <b>Speed:</b> 5.
+					li <b>Direction:</b> <i>obj_enemy.direction</i> (this takes the enemy object and return its direction in the game).
+					li Select <b>Relative</b>.
+					li Click <b>OK</b>. And again <b>OK</b>.
+					li Run the game.
+
+
+
+			.col-md-6
+				img(src="/img/tutorial1/8b-actionMousePlayerShoot.PNG", style="width:450px;")
+
+
+
+		.row
+			hr
+
+			.col-md-6
+				h2 III - Destroy the Enemy
+
+				p At the moment when we shoot the enemy a bullet will fly straight through it; we can shoot but will nothing happen. Obviously we want the enemy to disappear. Here's how:
+				
+				li Double click on the object of the enemy.
+				li Click <b>Add Event → Collision</b> and choose the bullet of the player.
+				li Now set up the action. Click on the label <b>main1</b>. Under the section <b>Objects</b>, drag and drop the icon <b>Destroy Instance</b> <img src="/img/icons/destroyInstance.png", style='height:25px;'> in the box under <b>Actions</b>. A new window opens.  
+
+				ol
+					li Select <b>Self</b> and click <b>OK</b>. With this the enemy will disappear.
+					li The bullet should disappear as well otherwise it'll just continue moving forever. Drag and drop the same icon and in the new window select <b>Other</b>. This will destroy the bullet as well.
+
+			
+
+			.col-md-6
+				img(src="/img/tutorial1/9b-actionCollision.PNG", style="width:450px;")
+
+		.row
+			hr
+
+			.col-md-6
+				h2 IV - Make the Enemy Shoot Automatically
+
+				p The enemy is fairly passive at the moment (it literally does nothing), so we should give it some basic intelligence to make the game more interesting for the player. The following will show you how to make the enemy randomly shoot at the player.
+
+				ol
+					li Create a sprite and an object for the enemy's bullet.
+					li Right click on the enemy object.
+					li Click <b>Add Event → Step → Step</b>.
+					ol
+						li Set an action to set how often to shoot. In the label <b>control</b>, under the section <b>Questions</b>, drag and drop the icon <b>Test Chance</b> <img src="/img/icons/testChance.png", style='height:25px;'> in the box under <b>Actions</b>. A new window opens.
+						li Set <b>sides</b> to 40 (the bigger the number, the less often it shoots).
+						li Now set an action to create the bullet and shoot it always towards the player. In the label <b>main1</b>, under the section <b>Objects</b>, drag and drop the icon <b>Create moving object</b> <img src="/img/icons/createMovingObj.png", style='height:25px;'> in the box under <b>Actions</b>. A new window opens.
+						li Set speed to 5.
+						li Set direction to <i>point_direction(x,y,name_of_player_object.x, name_of_player_object.y)</i>
+						li point_direction is a function that will return the direction from the first object - the enemy - to the second object - the player.
+						li Select <b>Relative</b>.
+						li Click <b>OK</b>. Again click <b>OK</b>.
+
+			.col-md-6
+				center
+					img(src="/img/tutorial1/10-actionDice.PNG", style="width:350px;")	
+
+
+		.row
+			hr
+			.col-md-6.col-md-offset-3.well
+				p <b> Mini Challenge</b>: Make player disappear after getting shot by an enemy.
+				p <b> Tip</b>: Step III is a good start.
+		.row
+			hr
+
+			.col-md-6
+				h2 V - Losing isn't Fun
+
+				p ...so let’s restart the game when player loses!
+
+				ol
+					li Double click on the object of the player.
+					li Select the event <b>Collision</b> we just created from the mini challenge.
+					li Under the two actions we created in the mini challenge, we will add a third action that restarts the game.
+					li In the label <b>main2</b>, under the section <b>Game</b>, drag and drop the icon <b>Restart</b> <img src="/img/icons/restart.png", style='height:25px;'> under the two existing actions.
+				
+			.col-md-6
+				img(src="/img/tutorial1/11-restart.PNG", style="width:450px;")
+
+		.row
+			hr
+
+			.col-md-6
+				h2 VI - Creating your Own World
+
+				p Up to now everything we have done all lives within a single window. A world is however much bigger than that. Next we'll show you how to create a massive world where you can only see a small view in so that you can wonder around.
+
+				ol
+					li To make the room a lot larger than your screen:
+					ol
+						li Goto to the main room you created
+						li Hit the <b>settings</b> tab on the left hand side of the room window.
+						li Set the <b>width</b> and <b>height</b> to a size you want (1500,1500).
+					li To create a view within this room:
+					ol
+						li Select the <b>view</b> tab on the left hand side of the room window.
+						li Set the view to the following settings
+						ol
+							li Select <b>Enable the use of Views</b>
+							li Select <b>Visible when rooms starts</b>
+							li In the <b>View in room</b> section, set <b>W</b>:800 and <b>H</b>:600.
+							li In the <b>Object following</b> section, select the main player object.
+							li In the <b>Object following</b> section, set <b>Hbor</b>:400 and <b>Vbor</b>:400.
+					li Now fill in the rest of the room with more objects.
+
+				
+			.col-md-6
+				center
+					img(src="/img/tutorial/viewInRoom.png", style="height:450px;")	
+
+		.row
+			hr
+
+			.col-md-6
+				h2 VII - Limit the Player's and Enemies' Shooting Range   
+
+				p In the previous step, we set up the room to be bigger than the computer screen. So, the player can move into the room and reach places that couldn't see at the beginning of the game. That's cool. BUT! If the player shoots a bullet, the bullet can go through the whole room and kill something we don't see in our screen. Similarly, an enemy who's in the room but not in view, can shoot at the player and kill him/her.
+				p Let's put a limit on how far the bullet can travel!
+				ol
+					li This condition is applied to the bullet, so go to the bullet object.
+					ol
+						li Create a new event called <b>step</b> (don't remember how? Check step I in the current page), as we want to continually monitor how far the bullet has traveled from the player.
+						ol
+							li As an action, create a <b>test variable</b> - found in the <b>control</b> tab, set the condition as <i>distance_to_object(obj_playerB)</i>, where the condition is <i>if greater than x (400)</i>
+							li Once the bullet is further than ‘400’ you want it to destroy itself so open two brackets - found in the <b>control</b> tab and add a <b>destroy</b> action - found in the <b>main1</b> tab, choosing <b>self</b> option.
+				
+			.col-md-6
+				center
+					img(src="/img/tutorial/logic1.png", style="width:250px; margin-top:100px;")
+
+
+		.row
+			hr
+
+			.col-md-6
+				h2 VIII - Creating Objects within the Room
+
+				p So let's place some object in the room - a wall would be something useful to hide behind it.
+
+				ol
+					li Go ahead and create a sprite for the wall, call it <b>spr_wall</b> - make sure to center it.
+					li Now create a new object call <b>obj_wall</b> - assign the wall sprite to this object.
+					li Place multiple walls within the room. 
+
+					li Run the game and try to shoot. You will notice that both bullets and the player can go straight through the wall. Let's try and fix this.
+					ol	
+						li To stop the bullet from going through the wall we will have to destroy the bullet as soon as it hits the wall.
+						li To do this select the <b>bullet</b> object → create a <b>new event → Collision</b> with wall.
+						li In action, select the destroy self option <img src="/img/icons/destroyInstance.png", style='height:25px;'>.
+				
+			.col-md-6
+				img(src="/img/tutorial1/12-wallStopBullet.PNG", style="width:450px;")	
+
+
+		.row
+			hr
+
+			.col-md-6
+				h2 IX - Changing the Speed of the Player
+
+				p When making the game I thought that I was moving quite slowly so we’re going to make a way for the player to run when we hit <b>space</b>.
+
+				ol
+					li First we have to create a variable which we can change to represent the speed at which the player travels.
+					ol
+						li Double click on the player object.
+						li Click <b>Add Event → Create Event </b> <img src="/img/icons/eventCreate.png", style='height:25px;'>.
+						li As an action, we are going to create a variable which will hold the speed of the player.
+						li Click the <b>control</b> tab, and under <b>Variables</b> section drag and drop the icon <b>set variable</b> <img src="/img/icons/testVar.png", style='height:25px;'> into the box under <b>Actions</b>.
+						li Set the variable as <i>playerSpeed</i>. 
+						li Set the value at <b>5</b>.
+
+					li At this point we have a variable representing the speed, so we can now replace each value in the move commands from <b>5</b> to <b>playerSpeed</b>.
+					ol
+						li For instance, select the event <b>Press A</b>, double click on the action of this event and replace the value of x from <b>-5</b> to <b>-playerSpeed</b>.
+						li Do this for all the move keys (A,W,S,D).
+						li Run the game to make sure it works.
+					li Now that we have a variable which represents the speed, we can also change it! When you press space you move at speed 10 but then when you release it you move back to speed 5. How to do this:
+					ol
+						li Creating a new event, press space.
+						li Create an action which sets the variable speed to 10.
+						ol
+							li In <b>control</b> tab → Drag and drop <b> set variable </b> into the box. A new window opens.
+							li Set <b>variable</b>: playerSpeed.
+							li Set <b>value</b>: 10.
+						li Do the same for when you release space, except this time set the variable playerSpeed to 5.
+					li Try it out! Run the game!
+
+				
+			.col-md-6
+				center
+					img(src="/img/tutorial/setVarImg.png", style="height:350px; margin-top:100px;")
+					p Creating the variable which holds the speed in the create event.
+
+		.row
+			hr
+
+			.col-md-6
+				h2 X - Introducing Ammo
+				p What is ammo? Ammo is the ammount of bullets the player has.
+				p Introducing ammo - Every gun runs out of ammo, so we will want to do the same thing, you don't want to be able to shoot an infinite amount of bullets! For this we'll have to create some logic again. In words, we want to have a variable which represents how many bullets you have, once they run out you should not be able to shoot anymore.
+				li Create a variable called ammo and set the start value as 30. Tip: Add the action in the event Create that we created in the step IX.
+				li Reduce the variable ammo by one every time a shot is made. How:
+				ol
+					li Set the variable ammo to -1. This has to be relative, as you want to subtract 1 by the current ammo amount.
+					li Now this will reduce the ammo, but not stop you from shooting when you have no ammo left. This is fixed with a simple if statement <i>if ammo > 0</i>, allow shooting. Here are some tips:
+					ol
+						li In tab <b>control</b> → Test variable <img src="/img/icons/testVar.png", style='height:25px;'> → set <b>variable</b>: ammo, <b>value</b>: 0, <b>action</b>: greater than
+						li Start a block
+						li Place the creation of the bullet as well as the setting of ammo to -1 on in there
+						li End the block.
+
+				li Set a label inside the game room, which tells you how much ammo you have.
+				ol
+					li Double click on the player object.
+					li Click <b> Add Event → Draw → Draw GUI</b>.
+					li Set an action to create a drawing to show the amount of ammo. Go to <b>control</b> tab, under <b>Variables</b> section, drag and drop the icon <b>Draw Variable</b> <img src="/img/icons/drawVar.png", style='height:25px;'> into the Actions box. A new window opens. 
+					li Set <b>variable</b>: ammo, and the directions of the label that will appear in the game <b>x</b>:30, <b>y</b>:30. 
+
+
+				
+			.col-md-6
+				.row
+					center
+						img(src="/img/tutorial/logic2.png", style="width:200px; margin-top:50px;")
+				.row
+					center
+						img(src="/img/tutorial/setVarImg2.png", style="height:350px; margin-top:50px;")
+					
+
+		.row
+			hr
+
+			.col-md-6
+				h2 XI - Ammo Boxes
+
+				p Now that we can lose ammo - we probably want to be able to find some around the game to fill up our gun.
+				
+				li Create a sprite and an object for the ammo box.
+				li Place 1-2 ammo boxes in the game.
+				li Create a collision event in the player object. When this event takes place, two actions are required:
+				ol
+					li The ammo is increased by 20. Go to tab <b>control</b>, under the section <b>Variables</b>, drag and drop the icon <b>Set variable</b> <img src="/img/icons/setVar.png", style='height:25px;'> into the Actions box. A new window opens; set variable to ammo and value to 20.
+					li Select <b>Relative</b> so it will increase its current value by 20 and not just replace its value with 20.
+					li The ammo box disappears (Check step 12 on how to destroy an object) 
+				
+			.col-md-6
+				center
+					img(src="/img/tutorial1/13-ammo.PNG", style="width:450px;")
+
+		

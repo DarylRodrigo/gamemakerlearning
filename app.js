@@ -54,6 +54,8 @@ app.configure('development', function(){
 app.get('/', routes.index);
 app.get('/tutorial', routes.tutorial);
 app.get('/tutorial/1', routes.tutorial1);
+app.get('/tutorial/2', routes.tutorial2);
+app.get('/tutorial/3', routes.tutorial3);
 
 app.listen(process.env.PORT || port, function(){
 	console.log("Express server listening on port " + port);

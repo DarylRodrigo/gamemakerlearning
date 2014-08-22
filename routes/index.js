@@ -1,5 +1,5 @@
 exports.index = function(req, res){
-	res.send(200);
+	res.redirect('/tutorial');
 }
 
 exports.tutorial = function(req, res){
@@ -8,4 +8,12 @@ exports.tutorial = function(req, res){
 
 exports.tutorial1 = function(req, res){
 	res.render('tutorial1');
+}
+
+exports.tutorial2 = function(req, res){
+	res.render('tutorial2');
+}
+
+exports.tutorial3 = function(req, res){
+	res.render('tutorial3');
 }

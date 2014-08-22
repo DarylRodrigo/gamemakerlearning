@@ -1,0 +1,148 @@
+extends layout
+
+block content
+	.jumbotron(style="background-image: url('/img/titleBg2.png');background-position:center; background-repeat: no-repeat;")
+		.container
+			h1(style="color:#FFFFFF;")  Part III - Extensions
+			p(style="color:#FFFFFF;") 
+			
+
+	.container
+		
+	
+		.row
+			
+
+			.col-md-6
+				h2 I - Basic Enemy Logic
+				
+				p When we start the game, all the enemies will start to shoot at you, irrespective of whether they can see you or not, which is pretty dumb. We should make them start doing things when you get near by. To do this place all their logic in a condition which checks if you are near.
+				ol
+					li In the enemy object, create a <b>new event → step</b>. 
+					li Create a new action → <b>set variable</b> <img src="/img/icons/setVar.png", style='height:25px;'>
+					ol 
+						li Make the condition to be <i>distance_to_object(obj_playerB)</i>.
+						li Let condition be less than <b>400</b>.
+						li Open a block (two brackets founds under <b>control tab</b>) and add in all the logic, then close it.
+						li As something cool you might want to have the enemy point in your direction. So when the player is close enough transform the sprite to be pointing at you. How:
+						ol
+							li Click the already created event <b>Step</b>. 
+							li Create an action; go to <b>main1</b>, and create an action <b>transform the sprite</b>.
+							li Set both <b>xscale</b> and <b>yscale</b> to 1 as you don't want to change the size.
+							li Set the <b>angle</b> to: <i>point_direction(x,y,obj_playerB.x, obj_playerB.y)</i>. This is because you want the enemy to always be pointing at you.
+
+			.col-md-6
+				center
+					img(src="/img/tutorial/logicImg3.png", style="height:250px; margin-top:100px;")
+
+		.row
+			hr
+
+			.col-md-6
+				h2 II - Portals
+				p Wouldn’t it be cool if you could just teleport to different parts of the room? Yeh thought so, let's have it so that when you run into a portal you jump to a different portal and vise versa.
+				ol
+					li Start off by creating a new sprite called <b>spr_portal</b>.
+					li Create two objects which go with it <b>obj_portal1</b>, <b>obj_portal2</b>.
+					li Now that we have these two portals you can place them anywhere in the room you want (make sure you leave space around the portal for when you exit).
+					li This in itself doesn't actually do anything so we need to add some actions to this.
+					ol
+						li Add a collision event with one of the portals in the player object.
+						li Now select the action to be jump to a point <img src="/img/icons/jumpto.png", style='height:25px;'>, set the x and y variables to be the x and y variables of the other portal.
+						li But wait, if you jump on the x,y coordinates of the other portal it means you will infinitely jump back and forth, so make sure that either the x or y has an offset (eg x + 100) to make sure you don't end up inside the portal.
+					li Do the same thing with portal the other portal.
+
+				
+			.col-md-6
+				center
+					img(src="/img/tutorial/logicImg4.png", style="width:350px; margin-top:100px;")
+
+		.row
+			hr
+
+			.col-md-6
+				h2 III - Powerup: Invincable
+
+				p What is a game without power ups? Pretty boring is what, here are 2 ways to add power ups:
+				p Yellow star: When the player catches a yellow star, he/she is invincable - heres how:
+				ol
+					li Create a stripe (no object) to load the different image of the player. If you have chosen playerBlue as your main player, no choose playerBlueStar.
+					li Create a stripe and an object for the yellow star.
+					li In the player object, create a collision with the yellow star. What actions are they taking place here?
+					ol
+						li Destroy instance - the yellow star should disappear after the player catches it.
+						li Set an alarm for 10 seconds. As long as we are passing through the 10 seconds: the player should: (i) appear with a different image, (ii) not get destroyed by enemy bullets. In order to do this, we need to create a new variable for the Player.
+						ol
+							li Go to the event Create, and set a new variable ‘power1’ to false. This sets the player’s power to be robust with enemy bullets to false (a star must be collected first)
+							li Go to the event Collision with the Yellow star and add the following 2 actions:
+							li Set the variable ‘power1’ to true.
+						li Set an alarm (Alarm 0) to 300 steps (30 steps represent one second). The alarm icon <img src="/img/icons/alarm.png", style='height:25px;'> can be found under the main2 tab, the Timing section.
+						li Now we have to specify “When the time is up, the variable ‘power1’ should become again false. Click Add Event → Alarm → Alarm 0. In this event, set the variable ‘power1’ to false.
+
+				
+
+				
+			.col-md-6
+				.row
+					center
+						img(src="/img/tutorial1/14-power1.png", style="width:450px;")
+						p Create power 1
+
+
+		.row
+			hr
+
+			.col-md-6
+				h2 IV - Powerup: Unlimited Ammo
+
+				p Orange star: When the player catches an orange star, he/she can shoot unlimited bullets for 10 seconds by keeping the left mouse button pressed. The ammo remains untouched throughout the period of the 10 seconds. How to do this:
+				ol
+					li Create a stripe and an object for the orange star.
+					li In the player object, create a collision with the orange star. What actions are they taking place here?
+					ol
+						li Destroy instance - the orange star should disappear after the player catches it.
+						li Set an alarm for 10 seconds. As long as we are passing through the 10 seconds: the player should be able to click the mouse left button and shoot unlimited bullets. How to do this:
+						ol
+							li Go to the event Create, and set a new variable ‘power2’ to false. This sets the player’s power to shoot unlimited bullets to false (an orange star must be collected first)
+							li Go to the event Collision with the Orange star and add the following 2 actions:
+							ol
+								li Set the variable ‘power2’ to true.
+								li Set an alarm (Alarm 1) to 300 steps (30 steps represent one second). The alarm icon <img src="/img/icons/alarm.png", style='height:25px;'> can be found under the main2 tab, the Timing section.
+							li When the power2 is true, the player must be able to shoot unlimited bullets. This is feasible with specifying a different event.
+							ol
+								li Click Add Event → Mouse → Global Mouse → Global Left Button.
+								li For this event, set the following action - If ‘power2’ is true then Shoot bullets.
+
+							li Now we have to specify when the time is up, the variable ‘power2’ should become again false. Click Add Event → Alarm → Alarm 1. In this event, set the variable ‘power2’ to false.
+
+
+				
+			.col-md-6
+				.row
+					center
+						img(src="/img/tutorial1/15-power2.png", style="width:450px; margin-top:25px;")
+						p Create power 2
+
+	.row
+			hr
+			.col-md-6.col-md-offset-3.well
+				center
+					p <b> Challenge </b> 
+
+
+				ol
+					li Make a power up which allows you to shoot through walls.
+					li Make a final destination which allows you to go to another level.
+					li Give yourself health.
+					li Get points for destroying the enemy.
+
+	.row
+			hr
+			.col-md-6.col-md-offset-3.well
+				center
+					p <b> Resources </b>
+
+				ol
+					li Game Maker official website: https://www.yoyogames.com
+					li Game Maker documents: http://docs.yoyogames.com/
+					li Game Maker tutorials: http://sandbox.yoyogames.com/make/tutorials

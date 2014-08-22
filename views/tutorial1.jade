@@ -27,10 +27,10 @@ block content
 		.row
 			hr
 			.col-md-12
-				center
-					h1	Basic Concepts
+				
+				h1	I - Basic Concepts
 
-					p In game maker there are three basic concepts you need to be familiar with in order to start making a game. Rooms Objects and Action and Events.
+				p In game maker there are three basic concepts you need to be familiar with in order to start making a game; Rooms, Objects, Events & Actions.
 
 		.row
 
@@ -38,33 +38,35 @@ block content
 				center
 					h2 Rooms
 				p.text-justify
-					|  This is where all the actions takes place, it is where the game lives and all the objects come together to construct the game.
+					|  A room is the place where all the actions take place. It is where the game lives and all the objects come together to construct the game.
 
 			.col-md-4
 				center
 					h2 Objects
 				p.text-justify
-					| These are the things which live inside of the game, they react and behave how you define them to.
-
+					| An object is anything that exists inside of the game. It reacts and behaves how you define in to.
+				p.text-justify
+					| Object examples: the player, the enemy, the wall, the bullet.
 			.col-md-4
 				center
 					h2 Events and Actions
 				p.text-justify
-					| These concepts allow you to make the objects react to events to take a certain action, whether that be an input from the keyboard or a reaction to being shot by a bullet.
-
+					| Events and Actions are concepts that allow you to make the objects react to events and take certain actions.
+				p.text-justify
+					| For instance: An event is clicking the 'space' button and the action is to make the player jump.
 
 		.row
 			hr
 
 			.col-md-6
-				h2 Setting up
+				h2 II - Setting Up
 				p Start off by creating a new project.
 
 				ol
-					li Click on File → New Project. A new window opens.
-					li Under Project Directory, choose the directory in which you would like to create your project. e.g. C:\Users\User\GameMaker\Tutorials. (You may need to create the folder GameMaker\ and GameMaker\Tutorials\ first)
-					li Under Project Name, give the name for your project. Let’s say Tutorial1
-					li <b> Click Create </b>
+					li Click on <b>File → New Project </b>. A new window opens.
+					li For <b>Project Directory</b>, choose the directory in which you would like to create your project. e.g. C:\Users\User\GameMaker\Tutorials. (You may need to create the folder GameMaker\ and GameMaker\Tutorials\ first)
+					li For <b>Project Name</b>, give the name for your project. Let’s say <b> Tutorial1 </b>
+					li Click <b> Create </b>
 
 
 			.col-md-6
@@ -74,16 +76,15 @@ block content
 			hr
 
 			.col-md-6
-				h2 Creating a Spirte
-				p Create a sprite. Sprites represent the characters (e.g. the player, enemies) and objects (rocks, bullets) in the game. Let’s create a sprite for the main player.
-
+				h2 III - Creating a Sprite
+				p Create a sprite. Sprites are the images that represent the characters (e.g. the imgage of the player that looks on the right, or looking on the left). Let’s create a sprite for the main player.
 
 				ol
-					li Right click on the folder Sprites → Create Sprite. A new window opens (Image 3)
-					li Name: spr_name - For consistency, all sprite names begin with “spr_” followed by the name we want to give them.
-					li Load Sprite: select the image you would like to load.
-					li Center the sprite by (i) clicking in the center of the image (this will determine its point of rotation) or by (ii) changing the numbers of X and Y under the Origin. The numbers should be the half of the actual size (width and height) of the image) (Image 4)   
-					li Click OK.
+					li Right click on <b>Sprites → Create Sprite</b>. A new window opens.
+					li <b>Name</b>: spr_name - For consistency, all sprite names begin with “spr_” followed by the name we want to give them.
+					li <b>Load Sprite</b>: select the image you would like to load.
+					li Center the sprite by <b>(i)</b> clicking in the center of the image (this will determine its point of rotation) or by <b>(ii)</b> changing the numbers of X and Y under the Origin. The numbers should be the half of the actual size (width and height) of the image).
+					li Click <b>OK</b>.
 
 
 			.col-md-6
@@ -93,18 +94,14 @@ block content
 			hr
 
 			.col-md-6
-				h2 Creating an Object
-				p Create an object. Objects represent the characters (e.g. the player, enemies) and objects (rocks, bullets) in the game. Let’s create an object for the main player.
-
-
+				h2 IV - Creating an Object
+				p Create an object. Objects define the behaviour of the characters (e.g. the player, enemies) and objects (rocks, bullets) in the game. Let’s create an object for the main player.
 
 				ol
-					li Right click on the folder Objects → Create Object. A new window opens (Image 5)
-					li Name: obj_name - For consistency, all object names begin with “obj_” followed by the name we want to give them.
-					li Load the sprite the will be associate with this object. Click on the text box under “Sprite”.
-					li Click OK.
-
-
+					li Right click on <b>Objects → Create Object</b>. A new window opens.
+					li <b>Name</b>: obj_<b><i>name</b></i> - For consistency, all object names begin with “obj_” followed by the name we want to give them.
+					li Load the sprite the will be associated with this object. Click on the text box under <b>Sprite</b>.
+					li Click <b>OK</b>.
 
 			.col-md-6
 				img(src="/img/tutorial1/2.createObject.PNG", style="width:450px;")
@@ -113,79 +110,63 @@ block content
 			hr
 
 			.col-md-6
-				h2 [optional] Creating a background
-				p Create a background. Background is the image that will appear as a 
-
-
+				h2 V - Creating a Background (optional)
+				p Create a background.
 
 				ol
-					li Right click on the folder Backgrounds → Create Background. A new window opens (Image 2)
-					li Name: bg_name - For consistency, all background names begin with “bg_” followed by the name we want to give them.
-					li Load Background: select the image you would like to load.
-					li Click OK.
-
-
-
+					li Right click on <b>Backgrounds → Create Background</b>. A new window opens.
+					li <b>Name</b>: bg_<b><i>name</b></i> - For consistency, all background names begin with “bg_” followed by the name we want to give them.
+					li <b>Load Background</b>: select the image you would like to load.
+					li Click <b>OK</b>.
 
 			.col-md-6
-				img(src="/img/tutorial1/background1.png", style="width:450px;"))
+				img(src="/img/tutorial/background1.png", style="width:450px;"))
 
 		.row
 			hr
 
 			.col-md-6
-				h2 Creating an Room
-				
-				p Create room in which the game will take place
+				h2 VI - Creating an Room
+				p Create room in which the game will take place.
 				
 				ol
-					li Right click on the folder Room → Create Room. A new window opens (Image 6)
-					li Click on the Backgrounds tab.
-					li Click on the text box and select the background image you created before.
-					li The image is seen multiple times in the room. 
-					li Click on the Objects tab. 
+					li Right click on <b>Room → Create Room</b>. A new window opens.
+					li Click on the <b>Backgrounds</b> tab. (optional)
+					li Click on the text box and select the background image you created before. (optional)
+					li Click on the <b>Objects</b> tab. 
 					li Select the object we just created.
 					li Click anywhere in the room to put the object you selected.
-					li Click the tick button on the top left of the window.
+					li Click the green tick button on the top left of the window.
 
 				p At this point we have an object, placed in the game but it will do nothing because no action events have been set.
-
-
-
 
 			.col-md-6
 				img(src="/img/tutorial1/4.createRoom.PNG", style="width:450px;")
 
-
-
 		.row
 			hr
 			.col-md-6.col-md-offset-3.well
-				h4 Run the game
-				p Let’s test what we have done so far by running the game. Click on the green play button at the top of the screen <img src="/img/icons/run.png", style='height:25px;'>. Be patient. This will take several seconds. Eventually a new window opens and should look like the image below (Image 7).
+				h4 VII - Run the Game
+				p Let’s test what we have done so far by running the game. Click on the green play button at the top of the screen <img src="/img/icons/run.png", style='height:25px;'>. Be patient. This will take several seconds. A new window opens and should look like the image on the right.
 
 
 		.row
 			hr
 
 			.col-md-6
-				h2 Editing the Sprite
-				p Have you noticed that the player has a white background? Does it look nice? Nah so lets remove it.
+				h2 VIII - Editing the Sprite
+				p Have you noticed that the player has a white background? Does it look nice? Nah! So lets remove it.
 
 				ol
 					li Double click on the sprite of the main player.
-					li Click button Edit Sprite. A new window opens.
-					li From the menu bar, click the 2nd icon from the right. It looks like this <img src="/img/icons/editSprite.png", style='height:25px;'>
+					li Click button <b>Edit Sprite</b>. A new window opens.
+					li From the <b>menu</b> bar, click the 2nd icon from the right. It looks like this <img src="/img/icons/editSprite.png", style='height:25px;'>
 					li From the left column, click the following icon <img src="/img/icons/editSprite.png", style='height:25px;'>. This tool allows you to select the background.
 					li Click on the white background of the image.
 					li Press delete from keyboard. The white background has been removed!
 					li Click the green tick on the top left corner <img src="/img/icons/done.png", style='height:25px;'> to save and close the window.
 					li Click the green tick again to save and close the previous window.
-					li Click OK.
-
-
-
-
+					li Click <b>OK</b>.
 
 
 			.col-md-6
@@ -195,20 +176,22 @@ block content
 			hr
 
 			.col-md-6
-				h2 Making your first event
-				p Create events for the main player to move right.
+				h2 IX - Making your First Event
+				p Create an event for the player to move right. The player should move right by clicking the button D.
 
 				ol
 					li Double click on the object of the player.
-					li Click Add Event and select Keyboard → Letters → D (move right)
+					li Click <b>Add Event</b> and select <b>Keyboard → Letters → D</b>
 					
 					ol
-						li Now add an action to that event. when we press the button D, we want to move right. How: Click on the label move. Under the section Jump, drag and drop the first icon <img src="/img/icons/jumpto.png", style='height:25px;'> in the box under Actions.
-						li Double click on the icon under the Actions. A new window opens.
-						li In the text box of x*, write down: +5. Select Relative.
-						li *x is the x-axis of the room, where the player moves left and right. By writing += 5, we ask the player to move on the left with a speed set to 5.
+						li Add an action to that event. When we press the button D, we want to move right. How: Click on the label <b>move</b>. Under the section <b>Jump</b>, drag and drop the first icon <img src="/img/icons/jumpto.png", style='height:25px;'> in the box under <b>Actions</b>. A new line appears in the box.
+						li Double click on this new line. A new window opens.
+						li In the text box of <b>x</b>(*), write down: +5. Select <b>Relative</b>.
+						<p>(*)<b>x</b> is the x-axis of the room, where the player moves left and right. By writing += 5, we ask the player to move on the right with a speed set to 5.</p>
 						li Click the green tick button on the top left corner to save and close. 
-					li Repeat step (b) for moving left (with the letter A), up (with the letter W) and down (with the S). Attention: For the up and down, we change the y-axis.
+					li Repeat step (b) for moving left (with the letter A), up (with the letter W) and down (with the S).
+					<p> Question #1: If we write <b>+5</b> for moving right, what will we write for moving left?</p>
+					<p> Question #2: If we use the <b>x-axis</b> for moving left and right, what will we use for moving up and down?</p>
 
 			.col-md-6
 				img(src="/img/tutorial1/6b-actionMoveRight.PNG", style="width:450px;")
@@ -220,424 +203,3 @@ block content
 				p <b> Mini Challenge: </b> Create a sprite and an object for the enemy and place 6 enemies in the room. (Note: When placing the enemies, make sure to use the whole ‘space’ and not only the visible space in the room)
 
 
-
-		.row
-			hr
-
-			.col-md-6
-				h2 Facing the mouse
-
-				p Make player turn in the direction of the mouse
-				
-				ol 
-					li Double click on the player object.
-					li Click Add Event. Select Step. Select again Step.
-					li Click the label control and under the section Code, drag and drop the icon Execute Code <img src="/img/icons/executeCode.png", style='height:25px;'> in the box under Actions. A new window opens.
-					li Copy paste the following text in the new window. <br> direction =  point_direction(x, y, mouse_x, mouse_y); <br> image_angle = direction;
-					li Save and Close (green tick icon on the top left)
-					li Click OK.
-
-
-
-			.col-md-6
-				img(src="/img/tutorial1/7b-actionStepFaceMouse.PNG", style="width:450px;")
-
-		.row
-			hr
-
-			.col-md-6
-				h2 Make the player shoot!
-
-				ol
-					li Create a new sprite and object which will represent the bullet (follow steps 4-5)
-					li To make the player shoot a bullet, we need to add an event in the player object.
-					ol
-						li Double click on the player object
-						li Click Add Event. Select Mouse. Select Global Mouse and Global Left Pressed. Now an event has to take place. We need to set an action on the right side of the window. What is the action? To create a bullet and send it to the direction we want.
-
-					li Click the label main1 add under the section Objects, drag and drop the icon Create moving object <img src="/img/icons/createMovingObj.png", style='height:25px;'> in the box under Actions. A new window opens.
-					li Click on the text box next to object: select the bullet object
-					li Set the speed to 5
-					li Set the direction to: obj_enemy.direction (this takes the enemy object and return its direction in the game).
-					li Select Relative.
-					li Click OK. And again OK.
-					li Run the game.
-
-				
-
-
-
-			.col-md-6
-				img(src="/img/tutorial1/8b-actionMousePlayerShoot.PNG", style="width:450px;")
-
-
-
-		.row
-			hr
-
-			.col-md-6
-				h2 Destory the enemy
-
-				p At the moment when we shoot the enemy a bullet will fly straight through it; we can shoot but will nothing happen. Obviously we want it to disappear, heres how:
-				
-				li Double click on the object of the enemy
-				li Click Add Event, select Collision, choose the bullet of the player.
-				li Now set up the action. Click on the label main1. Under the section Objects, drag and drop the icon Destroy Instance <img src="/img/icons/destroyInstance.png", style='height:25px;'> in the box under Actions. A new window opens.  
-
-				ol
-					li Select Self and click OK. With this the enemy will disappear.
-					li The bullet should disappear as well otherwise it'll just continue forever. Drag and drop the same icon and in the new window select Other. This will destroy the bullet as well.
-
-				
-
-
-
-			.col-md-6
-				img(src="/img/tutorial1/9b-actionCollision.PNG", style="width:450px;")
-
-		.row
-			hr
-
-			.col-md-6
-				h2 Basic Enemy Intelligence
-
-				p The enemy is fairly passive at the moment (it literally does nothing), so well have to give it some basic intelligence to make the game more interesting for the player. The following will show you how to make enemy randomly shoot at you.
-
-				ol
-					li Create a sprite and an object for the enemy bullet
-					li Right click on the enemy object.
-					li Click Add Event, select Step, and again Step.
-					ol
-						li Set an action to set how often to shoot. In the label control, under the section Questions, drag and drop the icon Test Chance <img src="/img/icons/testChance.png", style='height:25px;'> in the box under Actions. A new window opens.
-						li Set sides to 40 (the bigger the number, the less often it shoots).
-						li Now set an action to create the bullet and shoot it always towards the player. In the label main1, under the section Objects, drag and drop the icon Create moving object <img src="/img/icons/createMovingObj.png", style='height:25px;'> in the box under Actions. A new window opens.
-						li Set speed to 5.
-						li Set direction to point_direction(x,y,<player>.x, <player>.y)
-						li point_direction is a function that will return the direction from the first object - the enemy - to the second object - the player.
-						li Select Relative.
-						li Click OK.
-						li Click OK.
-
-				
-			.col-md-6
-				center
-					img(src="/img/tutorial1/10-actionDice.PNG", style="width:350px;")	
-
-
-		.row
-			hr
-			.col-md-6.col-md-offset-3.well
-				p <b> Mini Challenge: </b> Make player disappear after getting shot by an enemy.
-
-		.row
-			hr
-
-			.col-md-6
-				h2 Losing isn't fun
-
-				p so let’s restart the game when player loses!
-
-				ol
-					li Double click on the object of the player.
-					li Select the event Collision we just created from the mini challenge.
-					li Under the two actions we created in the mini challenge, we will add a third action that restarts the game.
-					li In the label main2, under the section Game, drag and drop the icon Restart <img src="/img/icons/restart.png", style='height:25px;'> under the two existing actions.
-				
-			.col-md-6
-				img(src="/img/tutorial1/11-restart.PNG", style="width:450px;")
-
-		.row
-			hr
-
-			.col-md-6
-				h2 Creating your own world
-
-				p Up to now everythign we have done all lives within a single window, a world is however much bigger than that. Next we'll show you how to create a massive world where you can only see a small view in so that you can wonder aorund.
-
-				ol
-					li To make the level a lot larger than your screen
-					ol
-						li Goto to the main room you created
-						li Hit the settings tab on the left in the the room window.
-						li Set the width and height to a size you want (1500,1500)
-					li To create a view within this room
-					ol
-						li Select view tab on the left in the the room window.
-						li Set the view to the following settings
-						ol
-							li Enable the use of Views (check)
-							li Visible when rooms starts (check)
-							li view in room (W:800, H:600)
-							li Following the main player
-							li and finally Hbor 400 and  Vbor 400
-					li Now populate it with whatever you want.
-
-				
-			.col-md-6
-				center
-					img(src="/img/tutorial/viewInRoom.png", style="height:450px;")	
-
-		.row
-			hr
-
-			.col-md-6
-				h2 Player Logic 
-
-				p At the moment our player can shoot a bullet till it hits something, which means that if you are on the other side of the map and shoot, theoretically it could destroy an object on the other side. To avoid this we have to create some logic which destroys the bullet when it gets a certain distance from the player.
-				ol
-					li As this condition applied to the bullet, go to the bullet object
-					ol
-						li create a new event called step, as we want to continually monitor how far the bullet has traveled from the player
-						ol
-							li Create a test variable - found in the control tab, set the condition as distance_to_object(obj_playerB), where the condition is ‘if greater than x (400)’
-							li Once the bullet is further than ‘400’ you want it to destroy itself so open two brackets and add a destroy → self option.
-
-				
-			.col-md-6
-				center
-					img(src="/img/tutorial/logic1.png", style="width:250px; margin-top:100px;")
-
-
-		.row
-			hr
-
-			.col-md-6
-				h2 Creating objects within the room
-
-				p So lets place some object in the room - a wall would be something useful to hide behind
-
-				ol
-					li Go ahead and create a sprite for the wall, call it spr_wall - make sure to center it
-					li Now create a new object call obj_wall - assign the wall sprite to this object
-					li you can now begin to place the wall within the room
-
-					li If you tried to run the game you will find that both bullets and the player can go straight through the wall, so lets try and fix this.
-					ol	
-						li To stop the bullet from going through the wall we will have to destroy the it as soon as it hits the wall
-						li To do this select the obj_bullet → create a new event, collision with wall → in action select the destroy self option <img src="/img/icons/destroyInstance.png", style='height:25px;'>, just as you did in step 12 to destroy the enemy.
-				
-			.col-md-6
-				img(src="/img/tutorial1/12-wallStopBullet.PNG", style="width:450px;")	
-
-
-		.row
-			hr
-
-			.col-md-6
-				h2 Changing the speed of the player
-
-				p When making the game I thought that i was moving quite slowly so we’re going to make a way for the player to run when we hit space.
-
-				ol
-					li First we have to create a variable which we can change to represent the speed at which the player travels.
-					ol
-						li In the event tab make a create event <img src="/img/icons/eventCreate.png", style='height:25px;'>.
-						li In here we are going to create a variable which will hold the speed of the player.
-						li Click the control tab, and under Variables section drag and drop the icon set variable <img src="/img/icons/testVar.png", style='height:25px;'> into the Action box.
-						li Set the variable as playerSpeed 
-						li 	And the value at 5.
-
-					li At this point we have a variable representing the speed, so we can now replace each value in the move commands from 5 → playerSpeed
-					ol
-						li ie press a → jump x: -playerSpeed, y: 0
-						li Do this for all the move keys (a,w,s,d)
-						li Check if this works when running the game.
-					li Now that we have a variable which represent speed we can also change it! We want it so that when you press space you move at speed 10 but then when you release it you move back to speed 5
-					ol
-						li Do this by creating a new event, press space
-						li In here create an action which sets the variable speed to 10
-						ol
-							li control → set variable → variable: playerSpeed, value:10
-						li Do the same for when you release space, except this time set the variable playerSpeed to 5.
-					li Try it out!
-
-				
-			.col-md-6
-				center
-					img(src="/img/tutorial/setVarImg.png", style="height:350px; margin-top:100px;")
-					p Creating the variable which holds the speed in the create event.
-
-		.row
-			hr
-
-			.col-md-6
-				h2 Introducing Ammo
-
-				p Introducing ammo - Every gun runs out of ammo, so we will want to do the same thing, you don't want to be able to shoot an infinite about of bullets! For this we'll have to create some logic again. In words, we want to have a variable which represents how many bullets you have, once they run out you should not be able to shoot anymore.
-				li Create a variable called ammo and set the start value as 30. Tip: Add the action in the event Create that we created in the step 18. 
-				li Reduce the variable ammo by one every time a shot is made.
-				ol
-					li Do this by setting the variable ammo to -1, this has to be relative, as you want it subtract 1 not set the ammo to negative 1.
-					li Now this will reduce the ammo, but not stop you from shooting when you have no ammo left. This is fixed with a simple if statement if ammo > 0. allow shooting.
-					ol
-						li In tab control → Test variable <img src="/img/icons/testVar.png", style='height:25px;'> → set variable: ammo, value: 0, action: greater than
-						li Start a block
-						li Place the creation of the bullet as well as the setting of ammo to -1 on in there
-						li End the block.
-
-				li Set a label inside the game room, which tells you how much ammo you have.
-				ol
-					li Double click on the player object
-					li Click Add Event → Draw → Draw GUI
-					li Set an action to create a drawing to show the amount of ammo. Go to control tab, under Variables section, drag and drop the icon Draw Variable <img src="/img/icons/drawVar.png", style='height:25px;'> into the Actions box. A new window opens. 
-					li Set variable: ammo, and the directions of the label that will appear in the game x:30, y:30 
-
-
-				
-			.col-md-6
-				.row
-					center
-						img(src="/img/tutorial/logic2.png", style="width:200px; margin-top:50px;")
-				.row
-					center
-						img(src="/img/tutorial/setVarImg2.png", style="height:350px; margin-top:50px;")
-					
-
-		.row
-			hr
-
-			.col-md-6
-				h2 Ammo Boxes
-
-				p Now that we can lose ammo - we probably want to be able to find some around the game to fill up our gun.
-				
-				li Create a sprite and an object for the ammo box.
-				li Place 1-2 ammo boxes in the game.
-				li Create a collision event in the player object. When this event takes place, two actions are required:
-				ol
-					li The ammo is increased by 20. Go to tab control, under the section Variables, drag and drop the icon Set variable <img src="/img/icons/setVar.png", style='height:25px;'> into the Actions box. A new window opens; set variable to ammo and value to 20. Select Relative so it will increase its current value by 20 and not just replace its value with 20.
-					li The ammo box disappears (Check step 12 on how to destroy an object) 
-				
-
-
-				
-			.col-md-6
-				center
-					img(src="/img/tutorial1/13-ammo.PNG", style="width:450px;")
-
-		.row
-			hr
-
-			.col-md-6
-				h2 Basic Enemy Logic
-				
-				p When we start the game, all the enemies will start to shoot at you, irrespective of whether they can see you or not, which is pretty dumb. We should make them start doing things when you get near by. To do this place all their logic in a condition which checks if you are near.
-				ol
-					li In the enemy object → step 
-					li create a new action → set variable <img src="/img/icons/setVar.png", style='height:25px;'>
-					ol 
-						li Make the condition to be distance_to_object(obj_playerB)
-						li Let condition be less than 400
-						li Open a block and add in all the logic, then close it.
-						li As something cool you might want to have the enemy point in your direction. So when the player is close enough transform the sprite to be pointing at you.
-						ol
-							li In main one, create an action transform the sprite
-							li set the scale both to 1 as you dont want to change the size.
-							li set the angle to: point_direction(x,y,obj_playerB.x, obj_playerB.y), this is because you want the enemy to always be pointing at you.
-
-			.col-md-6
-				center
-					img(src="/img/tutorial/logicImg3.png", style="height:250px; margin-top:100px;")
-
-		.row
-			hr
-
-			.col-md-6
-				h2 Extention - Portals
-				p Wouldn’t it be cool if you could just teleport to different parts of the room? Yeh thought so, lets have it so that when you run into a portal you jump to a different portal and vise versa.
-				ol
-					li Start off by creating a new sprite called spr_portal
-					li Create two objects which go with it obj_portal1, obj_portal2
-					li Now that we have these two portals you can place them anywhere in the room you want (make sure you leave space around the portal for when you exit).
-					li This in itself doesn't actually do anything so we need to add some actions to this.
-					ol
-						li Add a collision event with one of the portals in the player object.
-						li Now select the action to be jump to a point <img src="/img/icons/jumpto.png", style='height:25px;'>, set the x and y variables to be the x and y variables of the other portal.
-						li But wait, if you jump on the x,y coordinates of the other portal it means you will infinitely jump back and forth, so make sure that either the x or y has an offset (eg x + 100) to make sure you don't end up inside the portal.
-					li Do the same thing with portal the other portal.
-
-				
-			.col-md-6
-				center
-					img(src="/img/tutorial1/logicImg4.png", style="width:350px; margin-top:100px;")
-
-		.row
-			hr
-
-			.col-md-6
-				h2 Extention - Power Ups
-
-				p What is a game without power ups? Pretty boring is what, here are 2 ways to add power ups:
-				p Yellow star: When the player catches a yellow star, he/she can move around for 10 seconds without losing if enemy bullets come on his/her way. For the period of 10 seconds the player appears with a different image that states his/her undefeated nature. How to do this:
-				ol
-					li Create a stripe (no object) to load the different image of the player. If you have chosen playerBlue as your main player, no choose playerBlueStar.
-					li Create a stripe and an object for the yellow star.
-					li In the player object, create a collision with the yellow star. What actions are they taking place here?
-					ol
-						li Destroy instance - the yellow star should disappear after the player catches it.
-						li Set an alarm for 10 seconds. As long as we are passing through the 10 seconds: the player should: (i) appear with a different image, (ii) not get destroyed by enemy bullets. In order to do this, we need to create a new variable for the Player.
-						ol
-							li Go to the event Create, and set a new variable ‘power1’ to false. This sets the player’s power to be robust with enemy bullets to false (a star must be collected first)
-							li Go to the event Collision with the Yellow star and add the following 2 actions:
-							li Set the variable ‘power1’ to true.
-						li Set an alarm (Alarm 0) to 300 steps (30 steps represent one second). The alarm icon <img src="/img/icons/alarm.png", style='height:25px;'> can be found under the main2 tab, the Timing section.
-						li Now we have to specify “When the time is up, the variable ‘power1’ should become again false. Click Add Event → Alarm → Alarm 0. In this event, set the variable ‘power1’ to false.
-
-				hr
-
-				p Orange star: When the player catches an orange star, he/she can shoot unlimited bullets for 10 seconds by keeping the left mouse button pressed. The ammo remains untouched throughout the period of the 10 seconds. How to do this:
-				ol
-					li Create a stripe and an object for the orange star.
-					li In the player object, create a collision with the orange star. What actions are they taking place here?
-					ol
-						li Destroy instance - the orange star should disappear after the player catches it.
-						li Set an alarm for 10 seconds. As long as we are passing through the 10 seconds: the player should be able to click the mouse left button and shoot unlimited bullets. How to do this:
-						ol
-							li Go to the event Create, and set a new variable ‘power2’ to false. This sets the player’s power to shoot unlimited bullets to false (an orange star must be collected first)
-							li Go to the event Collision with the Orange star and add the following 2 actions:
-							ol
-								li Set the variable ‘power2’ to true.
-								li Set an alarm (Alarm 1) to 300 steps (30 steps represent one second). The alarm icon <img src="/img/icons/alarm.png", style='height:25px;'> can be found under the main2 tab, the Timing section.
-							li When the power2 is true, the player must be able to shoot unlimited bullets. This is feasible with specifying a different event.
-							ol
-								li Click Add Event → Mouse → Global Mouse → Global Left Button.
-								li For this event, set the following action - If ‘power2’ is true then Shoot bullets.
-
-							li Now we have to specify when the time is up, the variable ‘power2’ should become again false. Click Add Event → Alarm → Alarm 1. In this event, set the variable ‘power2’ to false.
-
-
-				
-			.col-md-6
-				.row
-					center
-						img(src="/img/tutorial1/14-power1.png", style="width:450px;")
-						p Create power 1
-				.row
-					center
-						img(src="/img/tutorial1/15-power2.png", style="width:450px; margin-top:25px;")
-						p Create power 2
-
-
-	.row
-			hr
-			.col-md-6.col-md-offset-3.well
-				center
-					p <b> Challenge </b> 
-
-
-				ol
-					li Make a power up which allows you to shoot through walls.
-					li Make a final destination which allows you to go to another level.
-					li Give yourself health
-					li Get points for destroying the enemy
-
-	.row
-			hr
-			.col-md-6.col-md-offset-3.well
-				center
-					p <b> Resources </b>
-
-				ol
-					li Game Maker official website: https://www.yoyogames.com
-					li Game Maker documents: http://docs.yoyogames.com/
-					li Game Maker tutorials: http://sandbox.yoyogames.com/make/tutorials
